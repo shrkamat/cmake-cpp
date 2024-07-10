@@ -1,0 +1,19 @@
+LTTNG_UST_TRACEPOINT_EVENT(
+    // Tracepoint provider name
+    task_annotator,
+
+    // Tracepoint/event name
+    event,
+
+    // Tracepoint arguments (input)
+    LTTNG_UST_TP_ARGS(
+        const char *, id,
+        const char *, text
+    ),
+
+    // Tracepoint/event fields (output)
+    LTTNG_UST_TP_FIELDS(
+        lttng_ust_field_string(id, id)
+        lttng_ust_field_string(message, text)
+    )
+)
